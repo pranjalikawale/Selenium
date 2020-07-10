@@ -56,6 +56,22 @@ class TestLocator():
         time.sleep(2)
         assert driver.title=="Find a Flight: Mercury Tours:"
         
+         def test_for_id_locator_and_waits(self,register_driver):
+        driver.implicitly_wait(5)
+        driver.maximize_window()
+        url="http://demo.guru99.com/test/facebook.html"
+        driver.get(url)
+
+        #id
+        driver.find_element(By.ID,"email").send_keys("abc")
+        driver.find_element(By.ID,"pass").send_keys("123")
+        driver.find_element(By.ID,"loginbutton").click()
+        time.sleep(3)
+        
+        #expicit wait
+        wait=WebDriverWait(driver,5)
+        status=wait.until(EC.title_is(u"Broward College - Fort Lauderdale, FL - Organization, College & University | Facebook"))
+        assert status==True
    
 
 
