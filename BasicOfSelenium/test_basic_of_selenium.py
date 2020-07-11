@@ -24,7 +24,7 @@ class TestBasicOfSelenium():
         url="http://newtours.demoaut.com/"
         driver.get(url)
         print(driver.title)
-        #print(driver.page_source)
+        print(driver.page_source)
         print(driver.current_url)
         #count of link 
         link=driver.find_elements(By.LINK_TEXT,"a")
@@ -37,13 +37,10 @@ class TestBasicOfSelenium():
         driver.find_element_by_partial_link_text("REG").click()
         time.sleep(2)
         driver.back()
-        #name
-        driver.find_element_by_name("userName").send_keys("mercury")
-        #print(username.is_displayed())#check status of element annd return true or false
+        #nameprint(username.is_displayed())#check status of element annd return true or false
         #print(username.is_enabled())# return true or false
+        driver.find_element_by_name("userName").send_keys("mercury")
         driver.find_element_by_name("password").send_keys("mercury")
-        #print(password.is_displayed())#check status of element annd return true or false
-        #print(password.is_enabled())# return true or false
         driver.find_element_by_name("login").click()
         #css selector
         roundtrip=driver.find_element_by_css_selector("input[value=roundtrip]")
